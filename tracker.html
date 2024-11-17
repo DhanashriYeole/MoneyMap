@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoneyMap</title>
+    <style>
+      body{
+        background:  linear-gradient(to bottom, #7b6b75, #aeabab,#878888);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1, h2{
+        text-align: center;
+        margin-top: 2%;
+      }
+      h2{
+        margin-bottom: 2%;
+      }
+      form{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 calc(33.333% - 10px);
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 2%;
+      }
+
+      label, input{
+        display: block;
+        margin: 5px;  
+        font-size:1.5rem;
+      }
+      button{
+        margin-left: 10px;
+      }
+      table{
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      table th, table td{
+        font-size: 30px;
+        border: 3px solid rgb(190, 202, 203);
+        padding: 5px;
+      }
+      #pie-chart {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+      } 
+      @media (max-width: 768px) {
+    .form{
+        flex: 1 1 100%; 
+    }
+}
+    </style>
+</head>
+  <body>
+    <h1>MoneyMap [Expenses Tracking System]</h1>
+    <form>
+      <label for="expense">Expense Name:</label>
+      <input type="text" autocomplete="off" id="expense" name="expense">
+      <label for="amount">Amount Spent:</label>
+      <input type="text" id="amount" autocomplete="off" name="amount">
+      <button type="button" onclick="addExpense()"> Add Expense </button>
+      
+    </form>
+    <h2>Expenses List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Expenses</th>
+          <th>Amount(in ₹)</th>
+        </tr>
+      </thead>
+      <tbody id="expenses-table">
+      </tbody>
+    </table>
+    <h2>Expenses Chart</h2>
+    <canvas id="pie-chart"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JS.js"></script>
+  </body>
+</html>
